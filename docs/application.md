@@ -25,7 +25,7 @@ rate-limiter
 
 여기에 application 모듈을 추가해 주겠다.
 
-![img.png](rate-limiter-create-module-application.png)
+![img.png](../public/application/rate-limiter-create-module-application.png)
 
 스프링 프로젝트로 간단한 프로젝트를 만들자 이 부분은 따로 사진을 올리지 않겠다.
 
@@ -96,4 +96,4 @@ public class FooController {
 
 애플리케이션은 크게 기능도 없고 그냥 통신용으로 열어 두는거라 별게 없다. 다음 정리부터 본격적으로 처리율 제한 알고리즘을 설계하고 구현해보자.
 
-> https://github.com/coli-bear/rate-limiter
+> [Github](https://github.com/coli-bear/rate-limiter)

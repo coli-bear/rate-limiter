@@ -85,7 +85,7 @@ API Gateway 의 부하분한을 하는 역할을 한다. 병렬처리에 대한 
 
 ## 구현 순서
 
-1. Application 1, 2
+1. [Application 1, 2](docs/application.md)
 2. API Gateway (Rate Limiter)
 3. Admin Application
 4. Load Balancer
