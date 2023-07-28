@@ -95,3 +95,5 @@ public class FooController {
 ## 여기까지 
 
 애플리케이션은 크게 기능도 없고 그냥 통신용으로 열어 두는거라 별게 없다. 다음 정리부터 본격적으로 처리율 제한 알고리즘을 설계하고 구현해보자.
+
+> https://github.com/coli-bear/rate-limiter
