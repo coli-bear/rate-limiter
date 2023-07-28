@@ -83,6 +83,15 @@ API Gateway 의 부하분한을 하는 역할을 한다. 병렬처리에 대한 
 
 그냥 구현 하는 서버이다. API 만 제공할 생각이다.
 
+## 구현 순서
+
+1. Application 1, 2
+2. API Gateway (Rate Limiter)
+3. Admin Application
+4. Load Balancer
+
+
+
 ### Build
 
 ### Run

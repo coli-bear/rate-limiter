@@ -35,10 +35,3 @@ out/
 
 ### VS Code ###
 .vscode/
-
-src/http/mail/MailAccount.http
-src/http/organization/user/UserJoinFlow.http
-src/main/resources/approval
-src/main/resources/user
-
-ppt
