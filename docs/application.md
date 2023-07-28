@@ -43,6 +43,16 @@ rate-limiter
 
 각각의 애플리케이션 포트는 8081 8082 로 설정하겠다.
 각 설정은 한단계 한단계 진행하면서 점진적으로 추가해 나가겠다.
+### 빌드 설정
+root project 에서 하위 프로젝트를 한번에 빌드하고 동작 시킬 수 있도록 setting.gradle 을 수정하자
+
+**settings.gradle**
+```groovy
+rootProject.name = 'rate-limiter'
+
+include 'application-1'
+include 'application-2'
+```
 
 ### 서버 설정
 

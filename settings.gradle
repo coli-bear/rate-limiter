@@ -1,2 +1,4 @@
 rootProject.name = 'rate-limiter'
 
+include 'application-1'
+include 'application-2'
