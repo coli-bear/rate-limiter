@@ -6,7 +6,7 @@
 
 먼저 비어있는 프로젝트를 생성해 주었다.
 
-![](../public/application/rate-limiter-root-create.png)
+![](assets/application/rate-limiter-root-create.png)
 
 프로젝트를 생성하면 맨 처음 src 경로가 있는데 제거했다.
 아래는 최초의 프로젝트 구조이다.
@@ -25,7 +25,7 @@ rate-limiter
 
 여기에 application 모듈을 추가해 주겠다.
 
-![img.png](../public/application/rate-limiter-create-module-application.png)
+![img.png](assets/application/rate-limiter-create-module-application.png)
 
 스프링 프로젝트로 간단한 프로젝트를 만들자 이 부분은 따로 사진을 올리지 않겠다.
 

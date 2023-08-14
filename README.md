@@ -4,7 +4,7 @@
 
 실제 시스템을 구축하는 것에 목적보다는 처리율 계산기의 알고리즘을 구현해 보고 싶은 목적이 가장 컸다. 그러니 아래에 시스템 구성에서 이상한 부분이 있어도 넘어가 주길 바란다.
 
-![img.png](public/rate-limiter-system-archi-book.png)
+![img.png](docs/assets/rate-limiter-system-archi-book.png)
 
 이 그림을 토대로 시스템 구조를 설계 한 다음 비즈니스 설계를 해보겠다.
 
@@ -49,7 +49,7 @@
 
 ## 시스템 구성도
 
-![](public/rate-limiter-system-archi.png)
+![](docs/assets/rate-limiter-system-archi.png)
 
 시스템을 보면 먼저 어드민 애플리케이션을 이용해서 데이터베이스에 설정을 주입해 주어야 한다. 그렇기 때문에 최초 기동시에는 무조건 기본 설정으로 데이터가 들어가 있어야 한다.
 
