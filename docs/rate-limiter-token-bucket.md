@@ -7,7 +7,7 @@
 
 아래는 이해를 돕기 위한 토큰 버킷을 이용한 트래픽 처리 제한 장치의 그림이다.
 
-![img.png](assets/token-bucket-algorithm.png)
+![img.png](assets/token-bucket/token-bucket-algorithm.png)
 
 그러면 이제부터 토큰 버킷 알고리즘을 구하기 위한 요구사항을 분석해보자.
 
@@ -140,7 +140,7 @@ tasks.named('test') {
 ### 구현
 
 
-![img.png](assets/token-bucket-algorithm-diagram.png)
+![img.png](assets/token-bucket/token-bucket-algorithm-diagram.png)
 
 일단 위와 같이 객체를 분리해봤다.
 
