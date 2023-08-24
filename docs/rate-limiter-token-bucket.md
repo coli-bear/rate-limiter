@@ -46,7 +46,7 @@
 
 구현에 앞서 토큰 버킷 알고리즘의 행동을 구분해보겠다.
 
-- 토큰 공급기 (TokenGenerator) 는 토큰을 생성한 후 주기적으로 토큰 버킷(TokenBucket) 에 저장한다.
+- 토큰 공급기 (TokenIssuer) 는 토큰을 생성한 후 주기적으로 토큰 버킷(TokenBucket) 에 저장한다.
 - 요청이 들어오면 토큰 버킷이 비어있는지 확인 한 다음 비어있지 않으면 토큰을 가져와 요청을 처리하고, 비어 있으면 요청을 버린다.
 
 행동 자체는 정말 간단하다. 그러면 행동과 객체를 한번 분리해보겠다.
@@ -123,7 +123,7 @@ dependencies {
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
-    testImplementation 'io.projectreactor:reactor-test'
+    testImplementation 'org.assertj:assertj-core'
 }
 
 dependencyManagement {
@@ -427,26 +427,25 @@ public class DefaultTokenBucket implements TokenBucketAdministrator, TokenBucket
 **[RateLimiter]**
 
 ```java
-import my.study.gateway.algorithm.rate_limiter.token_bucket.Token;
-import org.springframework.http.HttpMethod;
+import my.study.gateway.core.rate_limiter.token_bucket.Token;
 
-import my.study.gateway.algorithm.rate_limiter.RateLimiter;
-import my.study.gateway.algorithm.rate_limiter.status.ThresholdExceeded;
+import my.study.gateway.core.rate_limiter.RateLimiter;
+import my.study.gateway.core.rate_limiter.status.ThresholdExceeded;
 import org.springframework.http.HttpMethod;
 
 /**
  * 토큰 버킷 처리율 제한기이다.
  */
 public class TokenBucketRateLimiter implements RateLimiter {
-    private TokenBucketConsumer tokenBucketConsumer;
+    private TokenBucketConsumer bucketConsumer;
 
-    public TokenBucketRateLimiter(TokenBucketConsumer tokenBucketConsumer) {
-        this.tokenBucketConsumer = tokenBucketConsumer;
+    public TokenBucketRateLimiter(TokenBucketConsumer bucketConsumer) {
+        this.bucketConsumer = bucketConsumer;
     }
 
     @Override
     public Token checkLimit(HttpMethod method, String endpoint) {
-        return this.tokenBucketConsumer.getToken()
+        return this.bucketConsumer.getToken()
             .orElseThrow(() -> new ThresholdExceeded(method, endpoint));
     }
 }
@@ -461,7 +460,7 @@ public class TokenBucketRateLimiter implements RateLimiter {
 
 ```java
 
-import my.study.gateway.algorithm.rate_limiter.token_bucket.Token;
+import my.study.gateway.core.rate_limiter.token_bucket.Token;
 import org.springframework.http.server.reactive.ServerHttpRequest;
 
 public class RateLimitProcessor {
